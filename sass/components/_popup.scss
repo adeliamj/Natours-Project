@@ -10,6 +10,12 @@
     visibility: hidden;
     transition: all .3s;
 
+    @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background-color: rgba($color-black, .3);
+    }
+
     &__content {
         @include absCenter;
         width: 75%;
@@ -60,19 +66,21 @@
     }
 
     // open states
-    &:target{
+    &:target {
         opacity: 1;
         visibility: visible;
     }
 
-    &:target &__content{
+    &:target &__content {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1);
 
     }
 
-    &__close{
-        &:link, &:visited{
+    &__close {
+
+        &:link,
+        &:visited {
             color: $color-grey-dark;
             position: absolute;
             top: 2.5rem;
@@ -84,7 +92,7 @@
             line-height: 1;
         }
 
-        &:hover{
+        &:hover {
             color: $color-primary;
         }
     }
