@@ -52,6 +52,14 @@ lem=16px
     transform: translate(0);
   }
 }
+@keyframes moveInTop {
+  from {
+    transform: translateY(0) scale(1);
+  }
+  to {
+    transform: translateY(-1.5rem) scale(1.03);
+  }
+}
 *,
 *::after,
 *::before {
@@ -630,7 +638,6 @@ body {
   text-align: center;
   border-radius: 3px;
   box-shadow: 0 1.5rem rgba(0, 0, 0, 0.15);
-  transition: transition 0.3s;
 }
 @media only screen and (max-width: 56.25em) {
   .feature-box {
@@ -651,7 +658,7 @@ body {
   }
 }
 .feature-box:hover {
-  transform: translateY(-1.5rem) scale(1.03);
+  animation: moveInTop 0.3s ease forwards;
 }
 
 .form__group:not(:last-child) {
