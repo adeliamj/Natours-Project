@@ -1229,6 +1229,7 @@ body {
   .popup__content {
     height: auto;
     width: 86%;
+    margin-top: 10%;
   }
 }
 .popup__left {
