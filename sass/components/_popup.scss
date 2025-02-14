@@ -9,6 +9,11 @@
     opacity: 0;
     visibility: hidden;
     transition: all .3s;
+    overflow-y: auto;
+
+    @include respond(phone) { 
+        overflow-y: auto;
+    }
 
     @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
         -webkit-backdrop-filter: blur(10px);
@@ -18,6 +23,7 @@
 
     &__content {
         @include absCenter;
+        
         width: 75%;
         height: 50rem;
         background-color: $color-white;
@@ -28,11 +34,23 @@
         opacity: 0;
         transform: translate(-50%, -50%) scale(0);
         transition: all .5s .2s;
+        overflow-y: auto;
+
+        @include respond(phone) {
+            height: auto;
+            width: 86%;
+            // padding-top: 10vh;
+        }
     }
 
     &__left {
         width: 33.333333%;
         display: table-cell;
+
+        @include respond(phone) {
+            width: 50%;
+            display: inline-block;
+        }
     }
 
     &__right {
@@ -40,11 +58,21 @@
         display: table-cell;
         vertical-align: middle;
         padding: 3rem 5rem;
+
+        @include respond(phone) {
+            width: 100%;
+            display: inline-block;
+        }
     }
 
     &__img {
         display: block;
         width: 100%;
+        
+        @include respond(phone) {
+            display: table-cell;
+            margin-left:50%;
+        }
     }
 
     &__text {
@@ -94,6 +122,10 @@
 
         &:hover {
             color: $color-primary;
+        }
+
+        @include respond(phone) {
+            // padding-top: 14vh;
         }
     }
 }
